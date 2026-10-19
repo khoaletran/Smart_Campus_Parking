@@ -1,0 +1,332 @@
+<?xml version="1.0"?>
+<mxfile host="Electron" modified="2026-10-19T17:34:15.803190+00:00" agent="Antigravity Draw.io MCP Builder" version="30.3.14" type="device">
+  <diagram id="diagram_1" name="Smart Campus Parking - Native UML Class Diagram">
+    <mxGraphModel dx="1200" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="900" math="0" shadow="1">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="pkg_identity" value="Module 1: Identity (Định danh)" style="swimlane;whiteSpace=wrap;html=1;startSize=32;fontStyle=1;fontSize=13;collapsible=0;rounded=1;arcSize=4;strokeWidth=1.5;fillColor=#F8F9FA;strokeColor=#616161;fontColor=#212121;" vertex="1" parent="1">
+          <mxGeometry x="40.0" y="40.0" width="500.0" height="780.0" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_card" value="Module 2: Card (Thẻ &amp; Gói cước)" style="swimlane;whiteSpace=wrap;html=1;startSize=32;fontStyle=1;fontSize=13;collapsible=0;rounded=1;arcSize=4;strokeWidth=1.5;fillColor=#E8F0FE;strokeColor=#1976D2;fontColor=#0D47A1;" vertex="1" parent="1">
+          <mxGeometry x="580.0" y="40.0" width="680.0" height="780.0" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_parking" value="Module 3: Parking (Bãi đỗ xe &amp; Nghiệp vụ cổng)" style="swimlane;whiteSpace=wrap;html=1;startSize=32;fontStyle=1;fontSize=13;collapsible=0;rounded=1;arcSize=4;strokeWidth=1.5;fillColor=#E8F5E9;strokeColor=#2E7D32;fontColor=#1B5E20;" vertex="1" parent="1">
+          <mxGeometry x="1300.0" y="40.0" width="1240.0" height="780.0" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_wallet" value="Module 4: Wallet (Ví tiền &amp; Giao dịch)" style="swimlane;whiteSpace=wrap;html=1;startSize=32;fontStyle=1;fontSize=13;collapsible=0;rounded=1;arcSize=4;strokeWidth=1.5;fillColor=#FFF8E1;strokeColor=#F57F17;fontColor=#E65100;" vertex="1" parent="1">
+          <mxGeometry x="40.0" y="860.0" width="820.0" height="680.0" as="geometry" />
+        </mxCell>
+        <mxCell id="pkg_notif" value="Module 5: Notification (Outbox &amp; Thông báo)" style="swimlane;whiteSpace=wrap;html=1;startSize=32;fontStyle=1;fontSize=13;collapsible=0;rounded=1;arcSize=4;strokeWidth=1.5;fillColor=#FCE4EC;strokeColor=#C2185B;fontColor=#880E4F;" vertex="1" parent="1">
+          <mxGeometry x="900.0" y="860.0" width="940.0" height="680.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_user" value="User" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="70.0" y="90.0" width="440.0" height="170.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_student" value="Student" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="70.0" y="290.0" width="440.0" height="160.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_student_dto" value="&amp;laquo;dto&amp;raquo;&lt;br/&gt;&lt;b&gt;StudentDto&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#FBC02D;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="70.0" y="480.0" width="440.0" height="105.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_id_api" value="&amp;laquo;interface&amp;raquo;&lt;br/&gt;&lt;b&gt;IdentityModuleApi&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#8E24AA;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="70.0" y="620.0" width="440.0" height="105.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card" value="Card" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="610.0" y="90.0" width="290.0" height="180.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_status_hist" value="CardStatusHistory" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="930.0" y="90.0" width="300.0" height="135.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_pkg" value="CardPackage" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="610.0" y="310.0" width="300.0" height="225.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_dto" value="&amp;laquo;dto&amp;raquo;&lt;br/&gt;&lt;b&gt;CardDto&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#FBC02D;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="940.0" y="270.0" width="290.0" height="105.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pkg_res" value="&amp;laquo;dto&amp;raquo;&lt;br/&gt;&lt;b&gt;PackageUsageResult&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#FBC02D;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="940.0" y="400.0" width="290.0" height="95.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_api" value="&amp;laquo;interface&amp;raquo;&lt;br/&gt;&lt;b&gt;CardModuleApi&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#8E24AA;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="610.0" y="580.0" width="620.0" height="105.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_gate" value="ParkingGate" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="1330.0" y="90.0" width="280.0" height="155.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_rate" value="ParkingRate" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="1640.0" y="90.0" width="340.0" height="195.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_gate_hw" value="&amp;laquo;interface&amp;raquo;&lt;br/&gt;&lt;b&gt;GateHardwareAdapter&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#8E24AA;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="1330.0" y="290.0" width="280.0" height="90.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_session" value="ParkingSession" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="2010.0" y="90.0" width="500.0" height="255.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_session_dto" value="&amp;laquo;dto&amp;raquo;&lt;br/&gt;&lt;b&gt;SessionDto&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#FBC02D;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="2010.0" y="380.0" width="500.0" height="160.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_park_svc" value="&amp;laquo;service&amp;raquo;&lt;br/&gt;&lt;b&gt;ParkingApplicationService&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#00838F;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="1330.0" y="560.0" width="650.0" height="95.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet" value="Wallet" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="70.0" y="910.0" width="340.0" height="160.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_tx" value="WalletTransaction" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="440.0" y="910.0" width="390.0" height="180.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_dto" value="&amp;laquo;dto&amp;raquo;&lt;br/&gt;&lt;b&gt;WalletTransactionDto&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFDE7;strokeColor=#FBC02D;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="440.0" y="1120.0" width="390.0" height="105.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_api" value="&amp;laquo;interface&amp;raquo;&lt;br/&gt;&lt;b&gt;WalletModuleApi&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#8E24AA;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="70.0" y="1260.0" width="760.0" height="105.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_outbox" value="OutboxEvent" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="930.0" y="910.0" width="440.0" height="225.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_notif_log" value="NotificationLog" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="1410.0" y="910.0" width="400.0" height="140.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_notif_pub" value="&amp;laquo;interface&amp;raquo;&lt;br/&gt;&lt;b&gt;NotificationEventPublisher&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#F3E5F5;strokeColor=#8E24AA;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="930.0" y="1180.0" width="880.0" height="80.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_outbox_worker" value="&amp;laquo;service&amp;raquo;&lt;br/&gt;&lt;b&gt;OutboxRelayWorker&lt;/b&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=36;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#E0F7FA;strokeColor=#00838F;strokeWidth=1.2;" vertex="1" parent="1">
+          <mxGeometry x="930.0" y="1290.0" width="440.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_user_fields" value="- id: Long&#xA;- username: String&#xA;- password: String&#xA;- role: String&#xA;- active: boolean&#xA;- createdAt: LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="440.0" height="100.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_user_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="126.0" width="440.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_user_methods" value="+ verifyPassword(rawPassword: String): boolean&#xA;+ changePassword(oldPass: String, newPass: String): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="134.0" width="440.0" height="42.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_student_fields" value="- id: Long&#xA;- studentCode: String&#xA;- fullName: String&#xA;- email: String&#xA;- phone: String&#xA;- faculty: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="440.0" height="100.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_student_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="126.0" width="440.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_student_methods" value="+ updateProfile(fullName: String, phone: String): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="134.0" width="440.0" height="26.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_student_dto_fields" value="+ id: Long&#xA;+ studentCode: String&#xA;+ fullName: String&#xA;+ email: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="440.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_id_api_methods" value="+ authenticate(username: String, password: String): String&#xA;+ verifyToken(token: String): Long&#xA;+ getStudentById(studentId: Long): StudentDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="440.0" height="58.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_fields" value="- id: Long&#xA;- cardUid: String&#xA;- studentId: Long&#xA;- status: String&#xA;- issueDate: LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="290.0" height="85.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="111.0" width="290.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_methods" value="+ linkStudent(studentId: Long): void&#xA;+ lockCard(): void&#xA;+ unlockCard(): void&#xA;+ isActive(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="119.0" width="290.0" height="74.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_status_hist_fields" value="- id: Long&#xA;- previousStatus: String&#xA;- newStatus: String&#xA;- reason: String&#xA;- changedAt: LocalDateTime&#xA;- changedBy: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="300.0" height="100.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_pkg_fields" value="- id: Long&#xA;- packageName: String&#xA;- packageType: String&#xA;- price: BigDecimal&#xA;- totalTrips: int&#xA;- remainingTrips: int&#xA;- startDate: LocalDateTime&#xA;- endDate: LocalDateTime&#xA;- status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="300.0" height="145.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_pkg_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="171.0" width="300.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_pkg_methods" value="+ isValid(currentTime: LocalDateTime): boolean&#xA;+ deductTrip(): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="179.0" width="300.0" height="42.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_dto_fields" value="+ id: Long&#xA;+ cardUid: String&#xA;+ studentId: Long&#xA;+ status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="290.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_pkg_res_fields" value="+ applied: boolean&#xA;+ usedPackageId: Long&#xA;+ paymentMethod: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="290.0" height="55.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_card_api_methods" value="+ validateActiveCard(cardUid: String): CardDto&#xA;+ checkAndConsumePackage(cardId: Long): PackageUsageResult&#xA;+ registerPackage(cardId: Long, pkgType: String, price: BigDecimal): Long" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="620.0" height="58.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_gate_fields" value="- id: Long&#xA;- gateCode: String&#xA;- gateName: String&#xA;- gateType: String&#xA;- active: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="280.0" height="85.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_gate_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="111.0" width="280.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_gate_methods" value="+ activate(): void&#xA;+ deactivate(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="119.0" width="280.0" height="42.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_rate_fields" value="- id: Long&#xA;- rateCode: String&#xA;- rateType: String&#xA;- pricePerEntry: BigDecimal&#xA;- blockPrice: BigDecimal&#xA;- extraPricePerHour: BigDecimal&#xA;- pricePerHour: BigDecimal&#xA;- active: boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="340.0" height="130.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_rate_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="156.0" width="340.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_rate_methods" value="+ calculateFee(durationMinutes: int): BigDecimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="164.0" width="340.0" height="26.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_gate_hw_methods" value="+ openBarrier(gateCode: String): void&#xA;+ closeBarrier(gateCode: String): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="280.0" height="42.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_session_fields" value="- id: Long&#xA;- sessionCode: String&#xA;- cardId: Long&#xA;- cardUid: String&#xA;- usedPackageId: Long&#xA;- entryTime: LocalDateTime&#xA;- exitTime: LocalDateTime&#xA;- durationMinutes: int&#xA;- totalFee: BigDecimal&#xA;- paymentMethod: String&#xA;- status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="500.0" height="175.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_session_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="201.0" width="500.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_session_methods" value="+ checkIn(cardId: Long, cardUid: String, entryTime: LocalDateTime): void&#xA;+ checkOut(exitTime: LocalDateTime, fee: BigDecimal, method: String, pkgId: Long): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="209.0" width="500.0" height="42.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_session_dto_fields" value="+ sessionCode: String&#xA;+ cardUid: String&#xA;+ entryTime: LocalDateTime&#xA;+ exitTime: LocalDateTime&#xA;+ totalFee: BigDecimal&#xA;+ paymentMethod: String&#xA;+ status: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="500.0" height="115.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_park_svc_methods" value="+ processEntry(cardUid: String, gateId: Long, idempotencyKey: String): SessionDto&#xA;+ processExit(cardUid: String, gateId: Long, idempotencyKey: String): SessionDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="650.0" height="42.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_fields" value="- id: Long&#xA;- studentId: Long&#xA;- balance: BigDecimal&#xA;- updatedAt: LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="340.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="96.0" width="340.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_methods" value="+ deposit(amount: BigDecimal): void&#xA;+ deduct(amount: BigDecimal): void&#xA;+ hasEnoughBalance(amount: BigDecimal): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="104.0" width="340.0" height="58.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_tx_fields" value="- id: Long&#xA;- transactionCode: String&#xA;- transactionType: String&#xA;- amount: BigDecimal&#xA;- balanceBefore: BigDecimal&#xA;- balanceAfter: BigDecimal&#xA;- idempotencyKey: String&#xA;- transactionTime: LocalDateTime&#xA;- description: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="390.0" height="145.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_dto_fields" value="+ transactionCode: String&#xA;+ transactionType: String&#xA;+ amount: BigDecimal&#xA;+ balanceAfter: BigDecimal" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="390.0" height="70.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_wallet_api_methods" value="+ topUp(studentId: Long, amount: BigDecimal, idempotencyKey: String): WalletTransactionDto&#xA;+ deductParkingFee(studentId: Long, amount: BigDecimal, idempotencyKey: String): WalletTransactionDto&#xA;+ purchasePackage(studentId: Long, cardId: Long, pkgType: String, idempotencyKey: String): WalletTransactionDto" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="760.0" height="58.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_outbox_fields" value="- id: Long&#xA;- aggregateType: String&#xA;- aggregateId: Long&#xA;- eventType: String&#xA;- payload: String&#xA;- status: String&#xA;- retryCount: int&#xA;- createdAt: LocalDateTime&#xA;- processedAt: LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="440.0" height="145.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_outbox_sep" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="171.0" width="440.0" height="8.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_outbox_methods" value="+ markAsProcessed(processedTime: LocalDateTime): void&#xA;+ incrementRetry(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="179.0" width="440.0" height="42.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_notif_log_fields" value="- id: Long&#xA;- recipientEmail: String&#xA;- subject: String&#xA;- status: String&#xA;- errorMessage: String&#xA;- sentAt: LocalDateTime" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="26.0" width="400.0" height="100.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_notif_pub_methods" value="+ recordOutboxEvent(aggregateType: String, aggregateId: Long, eventType: String, payload: String): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="880.0" height="26.0" as="geometry" />
+        </mxCell>
+        <mxCell id="c_outbox_worker_methods" value="+ publishPendingEvents(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=6;spacingRight=6;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;fontFamily=Consolas,Menlo,monospace;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="0.0" y="36.0" width="440.0" height="26.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_student_src" value="0..1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_student_tgt" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_card_history_src" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_card_history_tgt" value="0..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_card_pkg_src" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_card_pkg_tgt" value="0..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_session_in_src" value="0..*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_session_in_tgt" value="1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_session_out_src" value="0..*" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_session_out_tgt" value="0..1" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_wallet_tx_src" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_wallet_tx_tgt" value="0..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_outbox_log_src" value="1" style="edgeLabel;html=1;align=left;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="-0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_outbox_log_tgt" value="0..*" style="edgeLabel;html=1;align=right;verticalAlign=bottom;resizable=0;points=[];fontSize=11;fontColor=#333333;" vertex="1" parent="1">
+          <mxGeometry x="0.8" y="10.0" width="0.0" height="0.0" as="geometry" />
+        </mxCell>
+        <mxCell id="e_user_student" value="+user" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_student" target="c_user">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_card_history" value="+statusHistories" style="startArrow=diamond;startFill=0;startSize=12;endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_card" target="c_status_hist">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_card_pkg" value="+packages" style="startArrow=diamond;startFill=0;startSize=12;endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_card" target="c_card_pkg">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_session_in" value="+entryGate" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_session" target="c_gate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_gate_session_out" value="+exitGate" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_session" target="c_gate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_svc_session" value="manages" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_park_svc" target="c_session">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_svc_rate" value="calculates with" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_park_svc" target="c_rate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_svc_gatehw" value="controls barrier" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_park_svc" target="c_gate_hw">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_wallet_tx" value="+transactions" style="startArrow=diamond;startFill=0;startSize=12;endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_wallet" target="c_wallet_tx">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_outbox_log" value="+deliveryLogs" style="startArrow=diamond;startFill=0;startSize=12;endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_outbox" target="c_notif_log">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e_worker_outbox" value="polls &amp; relays" style="endArrow=open;endSize=8;html=1;rounded=0;strokeColor=#333333;strokeWidth=1.2;" edge="1" parent="1" source="c_outbox_worker" target="c_outbox">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_id_dto" value="returns" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#1565C0;strokeWidth=1.2;fontSize=10;fontColor=#1565C0;" edge="1" parent="1" source="c_id_api" target="c_student_dto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_card_dto" value="returns" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#1565C0;strokeWidth=1.2;fontSize=10;fontColor=#1565C0;" edge="1" parent="1" source="c_card_api" target="c_card_dto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_pkg_res" value="returns" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#1565C0;strokeWidth=1.2;fontSize=10;fontColor=#1565C0;" edge="1" parent="1" source="c_card_api" target="c_pkg_res">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_sess_dto" value="returns" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#1565C0;strokeWidth=1.2;fontSize=10;fontColor=#1565C0;" edge="1" parent="1" source="c_park_svc" target="c_session_dto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_wal_dto" value="returns" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#1565C0;strokeWidth=1.2;fontSize=10;fontColor=#1565C0;" edge="1" parent="1" source="c_wallet_api" target="c_wallet_dto">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_park_card" value="validates card &amp; package" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#C62828;strokeWidth=1.4;fontSize=10;fontColor=#C62828;" edge="1" parent="1" source="c_park_svc" target="c_card_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_park_wal" value="deducts parking fee" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#C62828;strokeWidth=1.4;fontSize=10;fontColor=#C62828;" edge="1" parent="1" source="c_park_svc" target="c_wallet_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_park_notif" value="records session event" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#C62828;strokeWidth=1.4;fontSize=10;fontColor=#C62828;" edge="1" parent="1" source="c_park_svc" target="c_notif_pub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_wal_card" value="activates package" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#C62828;strokeWidth=1.4;fontSize=10;fontColor=#C62828;" edge="1" parent="1" source="c_wallet_api" target="c_card_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_wal_notif" value="records wallet event" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#C62828;strokeWidth=1.4;fontSize=10;fontColor=#C62828;" edge="1" parent="1" source="c_wallet_api" target="c_notif_pub">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dep_card_id" value="verifies studentId" style="endArrow=open;endSize=8;dashed=1;html=1;rounded=0;strokeColor=#C62828;strokeWidth=1.4;fontSize=10;fontColor=#C62828;" edge="1" parent="1" source="c_card_api" target="c_id_api">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
