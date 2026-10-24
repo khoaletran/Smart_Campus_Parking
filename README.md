@@ -1,18 +1,21 @@
 # Smart Campus Parking 🚗🎓
 
-> **Hệ thống Quản lý Gửi xe Thông minh Khuôn viên Trường học bằng Thẻ Sinh viên (NFC/RFID)**
+> **Hệ thống Quản lý Gửi xe Thông minh Khuôn viên Trường học bằng Thẻ Sinh viên (NFC/RFID)**  
+> **Sinh viên thực hiện:** Trần Lê Khoa  
+> **Kiến trúc:** Modular Monolith (Spring Boot 3.5.x, MariaDB, React TypeScript)
 
 ---
 
 ## 1. Giới thiệu
 
-**Smart Campus Parking** là giải pháp quản lý gửi xe thông minh dành cho trường đại học. Điểm nổi bật của hệ thống là **kết hợp xác thực 2 yếu tố: Thẻ Sinh viên (NFC/RFID) và Camera quét nhận diện Biển số xe (ANPR)** giúp tối ưu tốc độ lưu thông và bảo vệ phương tiện chống tráo/trộm xe.
+**Smart Campus Parking** là giải pháp quản lý gửi xe thông minh dành riêng cho khuôn viên trường đại học. Hệ thống hoạt động theo mô hình **Cổng Headless Tự Động 100% (Zero-Human Gate)**, kết hợp xác thực 2 yếu tố: **Thẻ Sinh viên (NFC/RFID)** và **Camera AI nhận diện Biển số xe (ANPR)** giúp tối ưu lưu thông giờ cao điểm và bảo vệ phương tiện chống tráo xe, mất trộm.
 
 ### Lợi ích cốt lõi
-- **Một chạm đa năng (All-in-One):** Sinh viên dùng duy nhất thẻ sinh viên cho cả điểm danh, thư viện và gửi xe; khuyến khích văn hóa luôn đeo thẻ sinh viên.
-- **An ninh 2 lớp (Thẻ + Biển số xe):** Tự động nhận diện biển số xe và chụp ảnh lúc vào/ra, tự động đối soát biển số để chặn đứng nguy cơ tráo xe hoặc nhặt thẻ lấy cắp xe.
-- **Thanh toán linh hoạt:** Tự động kiểm tra gói cước (tuần, tháng, số lần) hoặc trừ số dư ví điện tử mô phỏng theo 3 cách tính phí (theo lượt, block 4 giờ, theo giờ thực tế).
-- **An toàn giao dịch:** Cơ chế kiểm soát đồng thời (SQL Lock), chống trừ tiền/lượt 2 lần (Idempotency-Key) và lưu vết kiểm toán giao dịch trực tiếp trong cơ sở dữ liệu.
+- **Một chạm đa năng (All-in-One):** Sinh viên sử dụng thẻ sinh viên tích hợp gửi xe, điểm danh và thư viện; hỗ trợ 1 sinh viên sở hữu nhiều thẻ active (thẻ cứng chính, thẻ phụ dự phòng, NFC di động).
+- **Chính sách 1 Sinh viên — 1 Suất để xe:** Ngăn chặn gian lận cho người ngoài mượn thẻ phụ gửi xe ké giá rẻ; đồng thời cứu trợ sinh viên khi lỡ để quên thẻ chính trong cốp xe (cho phép quẹt thẻ phụ để lấy xe ra).
+- **An ninh 2 lớp (Thẻ + Biển số xe):** Camera ANPR chụp và lưu ảnh lúc vào/ra, tự động đối soát biển số xe.
+- **Tự xử lý sự cố qua Điện thoại (Mobile-First):** Cổng vật lý ngoài trời không cần màn hình và nhân viên trực chốt. Mọi sự cố (lệch biển số, nạp ví nhanh) được sinh viên chủ động xử lý trực tiếp trên ứng dụng di động qua cơ chế xác thực trách nhiệm 2FA.
+- **Thanh toán linh hoạt:** Tự động kiểm tra gói cước (tuần, tháng, số lần) hoặc trừ số dư ví điện tử theo bảng phí (theo lượt, block 4 giờ, theo giờ thực tế).
 
 ---
 
@@ -20,12 +23,12 @@
 
 | Thành phần | Công nghệ / Thư viện | Vai trò |
 | :--- | :--- | :--- |
-| **Backend** | Java 21, Spring Boot 3.5.x, Spring MVC | Xử lý REST API và logic nghiệp vụ Modular Monolith |
-| **Bảo mật** | Spring Security, JJWT | Đăng nhập Stateless JWT, phân quyền theo vai trò |
-| **Cơ sở dữ liệu** | MariaDB / MySQL 8 (InnoDB), Spring Data JPA | Quản lý quan hệ dữ liệu, ACID transactions |
-| **Migration** | Flyway | Quản lý phiên bản schema cơ sở dữ liệu tự động |
-| **Message Queue**| RabbitMQ | *(Tạm hoãn / Deferred)* Chuẩn bị sẵn sàng khi mở rộng quy mô |
-| **Web Frontend** | React, TypeScript, Vite, Tailwind CSS | Giao diện Quản trị Desktop và Ứng dụng Sinh viên Mobile-first |
+| **Backend** | Java 21/23, Spring Boot 3.5.x, Spring MVC | Xử lý REST API và logic nghiệp vụ Modular Monolith |
+| **Bảo mật** | Spring Security 6.x, JJWT (0.12.x), BCrypt | Xác thực Stateless JWT, phân quyền `ADMIN` / `STUDENT` |
+| **Cơ sở dữ liệu** | MariaDB 11.4 (Docker), Spring Data JPA | Quản lý quan hệ dữ liệu 10 bảng chuẩn EER, ACID Transactions |
+| **Migration** | Flyway | Quản lý phiên bản schema CSDL tự động |
+| **Message Queue**| RabbitMQ | *(Tạm hoãn / Deferred)* Sẵn sàng kích hoạt khi mở rộng quy mô |
+| **Web Frontend** | React 18/19, TypeScript, Vite, Tailwind CSS | Giao diện Quản trị Desktop và Ứng dụng Sinh viên Mobile-first |
 | **NFC (Mở rộng)**| SwiftUI, Apple Core NFC | Đọc mã UID thẻ sinh viên qua iPhone |
 | **Môi trường/CI** | Docker Compose, Testcontainers, GitHub Actions | Đóng gói môi trường local và CI/CD tự động |
 
@@ -35,22 +38,17 @@
 
 ```text
 parking_student/
-├── Agent/                     # Báo cáo phân tích (Chương 2, 3), sơ đồ UML Draw.io
-│   ├── scripts/               # Scripts tiện ích tự động hóa
-│   ├── Chuong2_PhanTich_SmartCampusParking.docx
-│   ├── Chuong3_3.1_MoHinhLop_ClassDiagram.docx
-│   ├── SmartCampusParking_ClassDiagram.drawio
-│   └── SmartCampusParking_UseCase.drawio
+├── Agent/                     # Không gian làm việc của AI Agent (báo cáo, sơ đồ UML)
 ├── ChuongTrinh/               # Mã nguồn triển khai
-│   ├── backend/               # Spring Boot Modular Monolith
-│   ├── web/                   # Ứng dụng React + TypeScript
-│   └── compose.yaml           # Docker Compose cấu hình MariaDB & RabbitMQ
-├── docs/                      # Tài liệu kỹ thuật chi tiết
-│   ├── ARCHITECTURE.md        # Kiến trúc 5 module, thiết kế DB và lộ trình
-│   └── CHANGELOG.md           # Lịch sử thay đổi hệ thống
+│   ├── backend/               # Spring Boot Modular Monolith (Spring Boot 3.5.x)
+│   ├── web/                   # Ứng dụng React + TypeScript (Vite)
+│   └── compose.yaml           # Docker Compose cấu hình MariaDB 11.4 (Port 3307)
+├── docs/                      # Tài liệu kỹ thuật dự án
+│   ├── ARCHITECTURE.md        # Kiến trúc 5 module, thiết kế CSDL và lộ trình
+│   ├── CHANGELOG.md           # Nhật ký thay đổi và phiên bản hệ thống
+│   └── VanDe_GiaiPhap.md      # Nhật ký vấn đề nghiệp vụ & giải pháp kiến trúc cốt lõi
 ├── TaiLieu/                   # Tài liệu gốc của đề tài (Read-Only)
-├── GEMINI.md                  # Quy tắc vận hành AI Agent
-└── README.md                  # Hướng dẫn tổng quan và chạy nhanh
+└── README.md                  # Hướng dẫn tổng quan và khởi chạy
 ```
 
 ---
@@ -58,23 +56,24 @@ parking_student/
 ## 4. Hướng dẫn cài đặt & Khởi chạy nhanh (Quick Start)
 
 ### Yêu cầu môi trường
-- **Java 21** (JDK 21+)
+- **Java 21** hoặc **Java 23** (JDK 21+)
 - **Node.js** (v18+) & **npm**
 - **Docker** & **Docker Compose**
 
-### Bước 1: Khởi động Hạ tầng (Database & RabbitMQ)
+### Bước 1: Khởi động Cơ sở dữ liệu (MariaDB Docker)
 ```bash
 cd ChuongTrinh
 docker compose up -d
 ```
-> Khởi chạy MariaDB trên cổng `3306` và RabbitMQ trên cổng `5672` (Management UI: `http://localhost:15672`).
+> MariaDB 11.4 khởi chạy trên cổng `3307` (Database: `parking_db`, User: `parking_user`, Password: `parking_secret`).
 
 ### Bước 2: Chạy Backend (Spring Boot)
-```bash
+```powershell
 cd ChuongTrinh/backend
-./mvnw spring-boot:run
+.\mvnw.cmd spring-boot:run
 ```
-> Backend API khởi động tại: `http://localhost:8080` (Health Check: `http://localhost:8080/api/health`).
+> Backend API khởi động tại: `http://localhost:8080`  
+> Kiểm tra trạng thái hệ thống: `http://localhost:8080/api/health`
 
 ### Bước 3: Chạy Web Frontend (React)
 ```bash
@@ -82,35 +81,43 @@ cd ChuongTrinh/web
 npm install
 npm run dev
 ```
-> Web app khởi động tại: `http://localhost:5173`.
+> Giao diện web khởi động tại: `http://localhost:5173`
 
 ---
 
-## 5. Tài khoản dùng thử (Demo)
+## 5. Tài khoản thử nghiệm (Demo)
 
 | Tài khoản (Username) | Mật khẩu | Vai trò (Role) | Chức năng chính |
 | :--- | :---: | :---: | :--- |
-| `admin` | `password` | `ADMIN` | Quản lý sinh viên, kích hoạt/khóa thẻ, tạo gói cước, cài đặt biểu phí, nhật ký kiểm toán |
-| `student01` | `password` | `STUDENT` | Tra cứu hồ sơ, số dư ví, nạp ví nhanh, mua gói cước, lịch sử xe & tự xác thực 2FA khi lệch biển |
+| `admin` | `password` | `ADMIN` | Quản lý sinh viên, kích hoạt/khóa thẻ, tạo gói cước, cài đặt biểu phí |
+| *Mã số SV* (ví dụ: `SV20260001`) | `password` | `STUDENT` | Tra cứu thông tin, số dư ví, nạp ví nhanh, danh sách thẻ, tự xác thực 2FA khi lệch biển |
+
+> **Lưu ý nghiệp vụ:** Hệ thống đồng nhất `username = studentCode` (MSSV) cho tài khoản sinh viên. Sinh viên đăng ký và đăng nhập trực tiếp bằng MSSV của mình.
 
 ---
 
 ## 6. Danh mục API cốt lõi
 
-| Phương thức | Endpoint | Phân hệ | Mục đích |
+| Phương thức | Endpoint | Module | Mục đích |
 | :---: | :--- | :---: | :--- |
+| `POST` | `/api/auth/register` | Identity | Đăng ký tài khoản sinh viên mới (đồng nhất MSSV) |
 | `POST` | `/api/auth/login` | Identity | Đăng nhập hệ thống, cấp token JWT |
-| `GET` | `/api/students/me` | Identity | Lấy thông tin cá nhân sinh viên hiện tại |
-| `GET` | `/api/cards/me` | Card | Xem thông tin thẻ sinh viên và gói cước đang áp dụng |
-| `POST` | `/api/cards/link` | Card | Kích hoạt thẻ sinh viên mới vào hệ thống (Admin) |
-| `POST` | `/api/parking/entries` | Parking | Cổng tự động ghi nhận xe vào (Xác thực thẻ, quét/lưu biển số & ảnh chụp, mở barrier) |
-| `POST` | `/api/parking/exits` | Parking | Cổng tự động ghi nhận xe ra (Quét biển số ra, đối chiếu biển số, tự động trừ gói cước hoặc ví) |
-| `POST` | `/api/parking/sessions/{id}/self-verify-exit` | Parking | Sinh viên tự xác thực 2FA trên điện thoại để mở barrier tự động khi cảnh báo lệch biển số |
-| `GET` | `/api/wallet/balance` | Wallet | Tra cứu số dư ví điện tử |
-| `POST` | `/api/wallet/top-ups` | Wallet | Nạp tiền ví mô phỏng (Idempotency) |
+| `GET` | `/api/auth/profile` | Identity | Lấy thông tin hồ sơ người dùng đang đăng nhập |
+| `POST` | `/api/cards/link` | Card | Kích hoạt và liên kết thẻ RFID/NFC cho sinh viên |
+| `GET` | `/api/cards/student/{studentId}` | Card | Tra cứu danh sách toàn bộ thẻ của sinh viên |
+| `PATCH` | `/api/cards/{id}/lock` | Card | Khóa thẻ khẩn cấp khi bị mất (lưu vết kiểm toán) |
+| `PATCH` | `/api/cards/{id}/unlock` | Card | Mở khóa lại thẻ (lưu vết kiểm toán) |
+| `GET` | `/api/cards/{id}/history` | Card | Xem lịch sử thay đổi trạng thái thẻ |
+| `POST` | `/api/parking/check-in` | Parking | Cổng tự động nhận diện xe vào (xác thực thẻ, chụp biển số, mở barrier) |
+| `POST` | `/api/parking/check-out` | Parking | Cổng tự động nhận diện xe ra (đối soát biển số, trừ gói/ví, mở barrier) |
+| `POST` | `/api/parking/sessions/{id}/self-verify-exit` | Parking | Sinh viên tự xác thực 2FA trên điện thoại mở barrier khi lệch biển số |
+| `GET` | `/api/wallet/balance` | Wallet | Tra cứu số dư ví điện tử mô phỏng |
+| `POST` | `/api/wallet/top-up` | Wallet | Nạp tiền ví mô phỏng (hỗ trợ Idempotency-Key) |
 
 ---
 
-## 7. Tài liệu chi tiết
-- **Kiến trúc hệ thống & Lộ trình thực hiện:** Xem [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
-- **Lịch sử thay đổi:** Xem [`docs/CHANGELOG.md`](docs/CHANGELOG.md).
+## 7. Tài liệu chi tiết của dự án
+
+- **Kiến trúc hệ thống & Lộ trình triển khai:** [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md)
+- **Nhật ký giải quyết vấn đề nghiệp vụ & kiến trúc:** [`docs/VanDe_GiaiPhap.md`](docs/VanDe_GiaiPhap.md)
+- **Lịch sử thay đổi hệ thống (Changelog):** [`docs/CHANGELOG.md`](docs/CHANGELOG.md)
