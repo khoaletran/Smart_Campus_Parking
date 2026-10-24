@@ -38,7 +38,6 @@
 
 ```text
 parking_student/
-├── Agent/                     # Không gian làm việc của AI Agent (báo cáo, sơ đồ UML)
 ├── ChuongTrinh/               # Mã nguồn triển khai
 │   ├── backend/               # Spring Boot Modular Monolith (Spring Boot 3.5.x)
 │   ├── web/                   # Ứng dụng React + TypeScript (Vite)
@@ -47,7 +46,7 @@ parking_student/
 │   ├── ARCHITECTURE.md        # Kiến trúc 5 module, thiết kế CSDL và lộ trình
 │   ├── CHANGELOG.md           # Nhật ký thay đổi và phiên bản hệ thống
 │   └── VanDe_GiaiPhap.md      # Nhật ký vấn đề nghiệp vụ & giải pháp kiến trúc cốt lõi
-├── TaiLieu/                   # Tài liệu gốc của đề tài (Read-Only)
+├── TaiLieu/                   # Tài liệu gốc của đề tài
 └── README.md                  # Hướng dẫn tổng quan và khởi chạy
 ```
 
